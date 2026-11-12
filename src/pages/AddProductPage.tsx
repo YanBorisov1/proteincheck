@@ -52,7 +52,7 @@ function fromProduct(p: Product): FormState {
   };
 }
 
-type OcrState = { status: 'idle' } | { status: 'running'; pct: number } | { status: 'done'; found: string } | { status: 'error' };
+type OcrState = { status: 'idle' } | { status: 'running'; pct: number } | { status: 'done'; found: string } | { status: 'error'; load: boolean };
 
 function PhotoInput({ id, label, state, onFile }: { id: string; label: string; state: OcrState; onFile: (f: File) => void }) {
   const { t } = useI18n();
@@ -77,7 +77,7 @@ function PhotoInput({ id, label, state, onFile }: { id: string; label: string; s
       <p className="mt-2 text-sm" role="status" aria-live="polite">
         {state.status === 'running' && t('add.reading', { pct: state.pct })}
         {state.status === 'done' && (state.found ? t('add.readFound', { fields: state.found }) : t('add.ocrDone'))}
-        {state.status === 'error' && <span className="text-red-700 dark:text-red-400">{t('add.ocrFailed')}</span>}
+        {state.status === 'error' && <span className="text-red-700 dark:text-red-400">{t(state.load ? 'add.ocrLoadFailed' : 'add.ocrFailed')}</span>}
       </p>
     </div>
   );
@@ -127,8 +127,9 @@ export default function AddProductPage() {
         });
         set({ status: 'done', found: parsed.found.length ? `${parsed.found.length} / ${NUTRIENT_FIELDS.length + 1}` : '' });
       }
-    } catch {
-      set({ status: 'error' });
+    } catch (e) {
+      const { OcrError } = await import('../services/ocr');
+      set({ status: 'error', load: e instanceof OcrError && e.kind !== 'read' });
     }
   };
 

@@ -13,7 +13,8 @@ type Phase =
   | { kind: 'reading'; pct: number }
   | { kind: 'searching' }
   | { kind: 'results'; result: IdentifyResult }
-  | { kind: 'unreadable' };
+  | { kind: 'unreadable' }
+  | { kind: 'ocrFailed' };
 
 export default function IdentifyPage() {
   const { t, locale } = useI18n();
@@ -77,8 +78,9 @@ export default function IdentifyPage() {
       const tokens = buildQuery(ocrWords);
       setWords(tokens.map((x) => x.token).join(' '));
       await search(tokens);
-    } catch {
-      setPhase({ kind: 'unreadable' });
+    } catch (e) {
+      const { OcrError } = await import('../services/ocr');
+      setPhase(e instanceof OcrError && e.kind !== 'read' ? { kind: 'ocrFailed' } : { kind: 'unreadable' });
     }
   };
 
@@ -186,6 +188,14 @@ export default function IdentifyPage() {
       )}
 
       {phase.kind === 'searching' && <p role="status">{t('identify.searching')}</p>}
+
+      {phase.kind === 'ocrFailed' && (
+        <Card className="space-y-3">
+          <p role="alert" className="font-medium">{t('identify.ocrFailed')}</p>
+          {wordsForm}
+          <Button variant="secondary" onClick={retake} className="w-full">{t('identify.retake')}</Button>
+        </Card>
+      )}
 
       {phase.kind === 'unreadable' && (
         <Card className="space-y-3">
