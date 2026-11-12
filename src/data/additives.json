@@ -1,0 +1,1494 @@
+[
+ {
+  "id": "E100",
+  "name": "Curcumin",
+  "synonyms": [
+   "turmeric extract"
+  ],
+  "category": "colour",
+  "explanation": "Yellow colour from turmeric. No safety concern at permitted levels.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E100"
+ },
+ {
+  "id": "E101",
+  "name": "Riboflavin",
+  "synonyms": [
+   "vitamin b2 colour"
+  ],
+  "category": "colour",
+  "explanation": "Vitamin B2 used as a yellow colour. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E101"
+ },
+ {
+  "id": "E102",
+  "name": "Tartrazine",
+  "synonyms": [],
+  "category": "colour",
+  "explanation": "Synthetic azo dye. In the EU, foods containing it must carry a warning that it 'may have an adverse effect on activity and attention in children'.",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E102"
+ },
+ {
+  "id": "E104",
+  "name": "Quinoline yellow",
+  "synonyms": [],
+  "category": "colour",
+  "explanation": "Synthetic dye that requires the EU 'activity and attention in children' warning. EFSA lowered its ADI in 2009.",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E104"
+ },
+ {
+  "id": "E110",
+  "name": "Sunset yellow FCF",
+  "synonyms": [
+   "sunset yellow"
+  ],
+  "category": "colour",
+  "explanation": "Synthetic azo dye with the mandatory EU warning about activity and attention in children.",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E110"
+ },
+ {
+  "id": "E120",
+  "name": "Carmine",
+  "synonyms": [
+   "cochineal",
+   "carminic acid"
+  ],
+  "category": "colour",
+  "explanation": "Red colour made from insects, so it is not vegan or vegetarian. It can cause allergic reactions in rare cases.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E120"
+ },
+ {
+  "id": "E122",
+  "name": "Carmoisine",
+  "synonyms": [
+   "azorubine"
+  ],
+  "category": "colour",
+  "explanation": "Synthetic azo dye with the mandatory EU warning about activity and attention in children.",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E122"
+ },
+ {
+  "id": "E124",
+  "name": "Ponceau 4R",
+  "synonyms": [
+   "cochineal red a"
+  ],
+  "category": "colour",
+  "explanation": "Synthetic azo dye with the mandatory EU warning about activity and attention in children. EFSA lowered its ADI in 2009.",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E124"
+ },
+ {
+  "id": "E129",
+  "name": "Allura red AC",
+  "synonyms": [
+   "allura red"
+  ],
+  "category": "colour",
+  "explanation": "Synthetic azo dye with the mandatory EU warning about activity and attention in children.",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E129"
+ },
+ {
+  "id": "E133",
+  "name": "Brilliant blue FCF",
+  "synonyms": [
+   "brilliant blue"
+  ],
+  "category": "colour",
+  "explanation": "Synthetic blue dye. EFSA considers it safe at the ADI; it adds colour only, no nutrition.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E133"
+ },
+ {
+  "id": "E140",
+  "name": "Chlorophylls",
+  "synonyms": [
+   "chlorophyll"
+  ],
+  "category": "colour",
+  "explanation": "Natural green pigment from plants. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E140"
+ },
+ {
+  "id": "E141",
+  "name": "Copper chlorophyllin",
+  "synonyms": [
+   "copper complexes of chlorophylls"
+  ],
+  "category": "colour",
+  "explanation": "Green colour made from chlorophyll. Safe at permitted levels.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E141"
+ },
+ {
+  "id": "E150a",
+  "name": "Plain caramel",
+  "synonyms": [
+   "caramel colour",
+   "caramel color"
+  ],
+  "category": "colour",
+  "explanation": "Brown colour made by heating sugar. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E150a"
+ },
+ {
+  "id": "E150c",
+  "name": "Ammonia caramel",
+  "synonyms": [],
+  "category": "colour",
+  "explanation": "Caramel colour made with ammonia. Can contain small amounts of 4-MEI, a by-product EFSA set limits for.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E150c"
+ },
+ {
+  "id": "E150d",
+  "name": "Sulphite ammonia caramel",
+  "synonyms": [],
+  "category": "colour",
+  "explanation": "The most common caramel colour (in colas). Can contain 4-MEI; EFSA considers it safe within limits.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E150d"
+ },
+ {
+  "id": "E153",
+  "name": "Vegetable carbon",
+  "synonyms": [
+   "carbo medicinalis vegetabilis"
+  ],
+  "category": "colour",
+  "explanation": "Black colour from charred plant material. EFSA noted data gaps on possible contaminants.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E153"
+ },
+ {
+  "id": "E160a",
+  "name": "Carotenes",
+  "synonyms": [
+   "beta-carotene",
+   "beta carotene"
+  ],
+  "category": "colour",
+  "explanation": "Orange pigment, the same family as the pro-vitamin A in carrots. Safe as a food colour.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E160a"
+ },
+ {
+  "id": "E160b",
+  "name": "Annatto",
+  "synonyms": [
+   "bixin",
+   "norbixin"
+  ],
+  "category": "colour",
+  "explanation": "Orange-yellow colour from achiote seeds. Safe at the ADI; rare allergic reactions are reported.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E160b"
+ },
+ {
+  "id": "E160c",
+  "name": "Paprika extract",
+  "synonyms": [
+   "capsanthin",
+   "capsorubin"
+  ],
+  "category": "colour",
+  "explanation": "Red-orange colour from paprika. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E160c"
+ },
+ {
+  "id": "E162",
+  "name": "Beetroot red",
+  "synonyms": [
+   "betanin",
+   "beet red"
+  ],
+  "category": "colour",
+  "explanation": "Red colour from beetroot. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E162"
+ },
+ {
+  "id": "E163",
+  "name": "Anthocyanins",
+  "synonyms": [
+   "grape skin extract",
+   "black carrot extract"
+  ],
+  "category": "colour",
+  "explanation": "Purple-red pigments from fruit and vegetables. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E163"
+ },
+ {
+  "id": "E170",
+  "name": "Calcium carbonate",
+  "synonyms": [],
+  "category": "colour / acidity regulator",
+  "explanation": "Chalk, used as a white colour, anti-caking agent or calcium source. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E170"
+ },
+ {
+  "id": "E171",
+  "name": "Titanium dioxide",
+  "synonyms": [
+   "titanium dioxide"
+  ],
+  "category": "colour",
+  "explanation": "White pigment that is no longer allowed in food in the EU since 2022 because EFSA could not rule out genotoxicity. Still permitted in some other countries.",
+  "concern": "high",
+  "source": "https://www.efsa.europa.eu/en/news/titanium-dioxide-e171-no-longer-considered-safe-when-used-food-additive",
+  "eNumber": "E171"
+ },
+ {
+  "id": "E172",
+  "name": "Iron oxides",
+  "synonyms": [
+   "iron oxide"
+  ],
+  "category": "colour",
+  "explanation": "Mineral pigments (red, yellow, black). Safe at permitted levels.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E172"
+ },
+ {
+  "id": "E200",
+  "name": "Sorbic acid",
+  "synonyms": [],
+  "category": "preservative",
+  "explanation": "Prevents mould and yeast. Safe at permitted levels.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E200"
+ },
+ {
+  "id": "E202",
+  "name": "Potassium sorbate",
+  "synonyms": [],
+  "category": "preservative",
+  "explanation": "Common mould inhibitor in bars and shakes. EFSA considers it safe at the ADI.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E202"
+ },
+ {
+  "id": "E210",
+  "name": "Benzoic acid",
+  "synonyms": [],
+  "category": "preservative",
+  "explanation": "Preservative. Safe at the ADI, but some people are sensitive to benzoates, and children who consume a lot can approach the ADI.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E210"
+ },
+ {
+  "id": "E211",
+  "name": "Sodium benzoate",
+  "synonyms": [],
+  "category": "preservative",
+  "explanation": "Preservative used in drinks. Combined with vitamin C it can form traces of benzene; some sensitive people react to benzoates.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E211"
+ },
+ {
+  "id": "E220",
+  "name": "Sulphur dioxide",
+  "synonyms": [
+   "sulfur dioxide"
+  ],
+  "category": "preservative",
+  "explanation": "Preservative that can trigger reactions in people with asthma or sulphite sensitivity. Must be declared as an allergen above 10 mg/kg.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E220"
+ },
+ {
+  "id": "E223",
+  "name": "Sodium metabisulphite",
+  "synonyms": [
+   "sodium metabisulfite"
+  ],
+  "category": "preservative",
+  "explanation": "Sulphite preservative; can trigger reactions in people with asthma or sulphite sensitivity.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E223"
+ },
+ {
+  "id": "E234",
+  "name": "Nisin",
+  "synonyms": [],
+  "category": "preservative",
+  "explanation": "Natural antimicrobial peptide from bacteria. Safe at permitted levels.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E234"
+ },
+ {
+  "id": "E250",
+  "name": "Sodium nitrite",
+  "synonyms": [
+   "nitrite"
+  ],
+  "category": "preservative",
+  "explanation": "Curing agent in processed meat (e.g. protein jerky). It can form nitrosamines; EFSA says exposure is within safe limits but processed meat itself is linked to colorectal cancer.",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E250"
+ },
+ {
+  "id": "E252",
+  "name": "Potassium nitrate",
+  "synonyms": [
+   "nitrate"
+  ],
+  "category": "preservative",
+  "explanation": "Curing agent that converts to nitrite. See E250.",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E252"
+ },
+ {
+  "id": "E260",
+  "name": "Acetic acid",
+  "synonyms": [
+   "vinegar acid"
+  ],
+  "category": "acidity regulator",
+  "explanation": "The acid in vinegar. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E260"
+ },
+ {
+  "id": "E270",
+  "name": "Lactic acid",
+  "synonyms": [],
+  "category": "acidity regulator",
+  "explanation": "Acid naturally produced by fermentation. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E270"
+ },
+ {
+  "id": "E290",
+  "name": "Carbon dioxide",
+  "synonyms": [],
+  "category": "propellant / carbonation",
+  "explanation": "The gas in fizzy drinks. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E290"
+ },
+ {
+  "id": "E296",
+  "name": "Malic acid",
+  "synonyms": [],
+  "category": "acidity regulator",
+  "explanation": "Fruit acid that adds sourness. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E296"
+ },
+ {
+  "id": "E300",
+  "name": "Ascorbic acid",
+  "synonyms": [
+   "vitamin c"
+  ],
+  "category": "antioxidant",
+  "explanation": "Vitamin C, used to stop oxidation. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E300"
+ },
+ {
+  "id": "E301",
+  "name": "Sodium ascorbate",
+  "synonyms": [],
+  "category": "antioxidant",
+  "explanation": "A salt of vitamin C. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E301"
+ },
+ {
+  "id": "E304",
+  "name": "Ascorbyl palmitate",
+  "synonyms": [
+   "fatty acid esters of ascorbic acid"
+  ],
+  "category": "antioxidant",
+  "explanation": "Fat-soluble form of vitamin C that protects oils from going rancid. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E304"
+ },
+ {
+  "id": "E306",
+  "name": "Tocopherol-rich extract",
+  "synonyms": [
+   "mixed tocopherols",
+   "tocopherols",
+   "vitamin e"
+  ],
+  "category": "antioxidant",
+  "explanation": "Natural vitamin E that protects fats from oxidation. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E306"
+ },
+ {
+  "id": "E307",
+  "name": "Alpha-tocopherol",
+  "synonyms": [],
+  "category": "antioxidant",
+  "explanation": "Vitamin E. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E307"
+ },
+ {
+  "id": "E320",
+  "name": "Butylated hydroxyanisole (BHA)",
+  "synonyms": [
+   "bha"
+  ],
+  "category": "antioxidant",
+  "explanation": "Synthetic antioxidant. EFSA keeps it authorised at a low ADI; it is classified as a possible human carcinogen by IARC (2B).",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E320"
+ },
+ {
+  "id": "E321",
+  "name": "Butylated hydroxytoluene (BHT)",
+  "synonyms": [
+   "bht"
+  ],
+  "category": "antioxidant",
+  "explanation": "Synthetic antioxidant authorised at a low ADI. EFSA considers current exposure safe.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E321"
+ },
+ {
+  "id": "E330",
+  "name": "Citric acid",
+  "synonyms": [],
+  "category": "acidity regulator",
+  "explanation": "Fruit acid used for tartness and as a preservative aid. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E330"
+ },
+ {
+  "id": "E331",
+  "name": "Sodium citrates",
+  "synonyms": [
+   "sodium citrate",
+   "trisodium citrate"
+  ],
+  "category": "acidity regulator",
+  "explanation": "Salt of citric acid, stabilises proteins in shakes. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E331"
+ },
+ {
+  "id": "E332",
+  "name": "Potassium citrates",
+  "synonyms": [
+   "potassium citrate"
+  ],
+  "category": "acidity regulator",
+  "explanation": "Salt of citric acid. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E332"
+ },
+ {
+  "id": "E333",
+  "name": "Calcium citrates",
+  "synonyms": [
+   "calcium citrate"
+  ],
+  "category": "acidity regulator",
+  "explanation": "Salt of citric acid, also a calcium source. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E333"
+ },
+ {
+  "id": "E334",
+  "name": "Tartaric acid",
+  "synonyms": [],
+  "category": "acidity regulator",
+  "explanation": "Grape acid. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E334"
+ },
+ {
+  "id": "E392",
+  "name": "Rosemary extract",
+  "synonyms": [
+   "extracts of rosemary"
+  ],
+  "category": "antioxidant",
+  "explanation": "Natural antioxidant from rosemary. Safe at permitted levels.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E392"
+ },
+ {
+  "id": "E338",
+  "name": "Phosphoric acid",
+  "synonyms": [],
+  "category": "acidity regulator",
+  "explanation": "Adds sharpness (colas). EFSA set a group ADI for phosphates in 2019; high consumers and people with kidney disease should limit intake.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E338"
+ },
+ {
+  "id": "E339",
+  "name": "Sodium phosphates",
+  "synonyms": [
+   "disodium phosphate",
+   "trisodium phosphate",
+   "sodium phosphate"
+  ],
+  "category": "stabiliser",
+  "explanation": "Keeps proteins smooth in shakes and processed cheese. Covered by EFSA's 2019 phosphate group ADI; heavy use adds up across processed foods.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E339"
+ },
+ {
+  "id": "E340",
+  "name": "Potassium phosphates",
+  "synonyms": [
+   "dipotassium phosphate",
+   "potassium phosphate",
+   "tripotassium phosphate"
+  ],
+  "category": "stabiliser",
+  "explanation": "Common in ready-to-drink protein shakes. Covered by EFSA's phosphate group ADI; relevant for people with kidney disease.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E340"
+ },
+ {
+  "id": "E341",
+  "name": "Calcium phosphates",
+  "synonyms": [
+   "tricalcium phosphate",
+   "calcium phosphate",
+   "dicalcium phosphate"
+  ],
+  "category": "anti-caking agent / mineral",
+  "explanation": "Anti-caking agent and calcium source. Covered by EFSA's phosphate group ADI.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E341"
+ },
+ {
+  "id": "E450",
+  "name": "Diphosphates",
+  "synonyms": [
+   "sodium pyrophosphate",
+   "disodium diphosphate"
+  ],
+  "category": "raising agent / stabiliser",
+  "explanation": "Phosphate additive. Covered by EFSA's phosphate group ADI.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E450"
+ },
+ {
+  "id": "E451",
+  "name": "Triphosphates",
+  "synonyms": [
+   "sodium tripolyphosphate"
+  ],
+  "category": "stabiliser",
+  "explanation": "Phosphate additive. Covered by EFSA's phosphate group ADI.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E451"
+ },
+ {
+  "id": "E452",
+  "name": "Polyphosphates",
+  "synonyms": [
+   "sodium polyphosphate",
+   "sodium hexametaphosphate"
+  ],
+  "category": "stabiliser",
+  "explanation": "Phosphate additive. Covered by EFSA's phosphate group ADI.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E452"
+ },
+ {
+  "id": "E400",
+  "name": "Alginic acid",
+  "synonyms": [],
+  "category": "thickener",
+  "explanation": "Thickener from seaweed. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E400"
+ },
+ {
+  "id": "E401",
+  "name": "Sodium alginate",
+  "synonyms": [
+   "alginate"
+  ],
+  "category": "thickener",
+  "explanation": "Seaweed-derived thickener. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E401"
+ },
+ {
+  "id": "E406",
+  "name": "Agar",
+  "synonyms": [
+   "agar-agar"
+  ],
+  "category": "thickener",
+  "explanation": "Seaweed gel, a vegan alternative to gelatin. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E406"
+ },
+ {
+  "id": "E407",
+  "name": "Carrageenan",
+  "synonyms": [],
+  "category": "thickener",
+  "explanation": "Seaweed thickener used in shakes and dairy alternatives. EFSA (2018) kept it authorised but asked for more data and set a temporary ADI; some people report gut discomfort.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E407"
+ },
+ {
+  "id": "E407a",
+  "name": "Processed Eucheuma seaweed",
+  "synonyms": [],
+  "category": "thickener",
+  "explanation": "Less refined form of carrageenan. Same caveats as E407.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E407a"
+ },
+ {
+  "id": "E410",
+  "name": "Locust bean gum",
+  "synonyms": [
+   "carob bean gum",
+   "carob gum"
+  ],
+  "category": "thickener",
+  "explanation": "Thickener from carob seeds. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E410"
+ },
+ {
+  "id": "E412",
+  "name": "Guar gum",
+  "synonyms": [],
+  "category": "thickener",
+  "explanation": "Thickener from guar beans, also a soluble fibre. Safe; large amounts can cause bloating.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E412"
+ },
+ {
+  "id": "E414",
+  "name": "Gum arabic",
+  "synonyms": [
+   "acacia gum",
+   "acacia fibre",
+   "acacia fiber"
+  ],
+  "category": "thickener",
+  "explanation": "Tree resin used as a thickener and fibre. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E414"
+ },
+ {
+  "id": "E415",
+  "name": "Xanthan gum",
+  "synonyms": [],
+  "category": "thickener",
+  "explanation": "Fermentation-made thickener. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E415"
+ },
+ {
+  "id": "E417",
+  "name": "Tara gum",
+  "synonyms": [],
+  "category": "thickener",
+  "explanation": "Thickener from tara seeds. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E417"
+ },
+ {
+  "id": "E418",
+  "name": "Gellan gum",
+  "synonyms": [],
+  "category": "thickener",
+  "explanation": "Fermentation-made gelling agent that keeps particles suspended in shakes. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E418"
+ },
+ {
+  "id": "E440",
+  "name": "Pectin",
+  "synonyms": [
+   "pectins"
+  ],
+  "category": "gelling agent",
+  "explanation": "Fruit fibre used as a gelling agent. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E440"
+ },
+ {
+  "id": "E460",
+  "name": "Cellulose",
+  "synonyms": [
+   "microcrystalline cellulose",
+   "powdered cellulose",
+   "cellulose gel"
+  ],
+  "category": "bulking agent / anti-caking",
+  "explanation": "Plant fibre. Safe, but it adds bulk without nutrition.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E460"
+ },
+ {
+  "id": "E461",
+  "name": "Methyl cellulose",
+  "synonyms": [
+   "methylcellulose"
+  ],
+  "category": "thickener",
+  "explanation": "Modified cellulose used as a binder. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E461"
+ },
+ {
+  "id": "E464",
+  "name": "Hydroxypropyl methyl cellulose",
+  "synonyms": [
+   "hpmc",
+   "hypromellose"
+  ],
+  "category": "thickener",
+  "explanation": "Modified cellulose used as a binder and in capsules. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E464"
+ },
+ {
+  "id": "E466",
+  "name": "Carboxymethyl cellulose",
+  "synonyms": [
+   "cellulose gum",
+   "cmc",
+   "sodium carboxymethyl cellulose"
+  ],
+  "category": "thickener",
+  "explanation": "Modified cellulose thickener. EFSA sees no safety concern, but animal and small human studies suggest effects on gut bacteria; research is ongoing.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E466"
+ },
+ {
+  "id": "E322",
+  "name": "Lecithins",
+  "synonyms": [
+   "lecithin",
+   "soy lecithin",
+   "soya lecithin",
+   "sunflower lecithin",
+   "rapeseed lecithin"
+  ],
+  "category": "emulsifier",
+  "explanation": "Emulsifier from soy, sunflower or rapeseed that helps powders mix. Safe. Soy lecithin must be labelled as a soy allergen.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E322"
+ },
+ {
+  "id": "E433",
+  "name": "Polysorbate 80",
+  "synonyms": [
+   "polyoxyethylene sorbitan monooleate"
+  ],
+  "category": "emulsifier",
+  "explanation": "Synthetic emulsifier. EFSA considers it safe at the ADI; animal studies suggest possible effects on the gut lining and microbiome.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E433"
+ },
+ {
+  "id": "E435",
+  "name": "Polysorbate 60",
+  "synonyms": [],
+  "category": "emulsifier",
+  "explanation": "Synthetic emulsifier. Similar caveats to polysorbate 80.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E435"
+ },
+ {
+  "id": "E471",
+  "name": "Mono- and diglycerides of fatty acids",
+  "synonyms": [
+   "mono and diglycerides",
+   "mono- and diglycerides",
+   "monoglycerides"
+  ],
+  "category": "emulsifier",
+  "explanation": "Very common emulsifier. EFSA (2017) sees no safety concern, but it can contain process contaminants (glycidyl esters, 3-MCPD) and is a marker of ultra-processing.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E471"
+ },
+ {
+  "id": "E472e",
+  "name": "DATEM",
+  "synonyms": [
+   "mono- and diacetyl tartaric acid esters"
+  ],
+  "category": "emulsifier",
+  "explanation": "Emulsifier used in baked goods. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E472e"
+ },
+ {
+  "id": "E473",
+  "name": "Sucrose esters of fatty acids",
+  "synonyms": [
+   "sucrose esters"
+  ],
+  "category": "emulsifier",
+  "explanation": "Emulsifier. Safe at the ADI.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E473"
+ },
+ {
+  "id": "E475",
+  "name": "Polyglycerol esters of fatty acids",
+  "synonyms": [
+   "polyglycerol esters"
+  ],
+  "category": "emulsifier",
+  "explanation": "Emulsifier. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E475"
+ },
+ {
+  "id": "E476",
+  "name": "Polyglycerol polyricinoleate",
+  "synonyms": [
+   "pgpr"
+  ],
+  "category": "emulsifier",
+  "explanation": "Emulsifier that makes chocolate coatings flow. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E476"
+ },
+ {
+  "id": "E481",
+  "name": "Sodium stearoyl-2-lactylate",
+  "synonyms": [
+   "sodium stearoyl lactylate",
+   "ssl"
+  ],
+  "category": "emulsifier",
+  "explanation": "Emulsifier. Safe at the ADI.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E481"
+ },
+ {
+  "id": "E491",
+  "name": "Sorbitan monostearate",
+  "synonyms": [],
+  "category": "emulsifier",
+  "explanation": "Emulsifier. Safe at the ADI.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E491"
+ },
+ {
+  "id": "E500",
+  "name": "Sodium carbonates",
+  "synonyms": [
+   "sodium bicarbonate",
+   "baking soda",
+   "sodium hydrogen carbonate"
+  ],
+  "category": "raising agent",
+  "explanation": "Baking soda. Safe; adds a little sodium.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E500"
+ },
+ {
+  "id": "E501",
+  "name": "Potassium carbonates",
+  "synonyms": [
+   "potassium carbonate"
+  ],
+  "category": "acidity regulator",
+  "explanation": "Used to alkalise cocoa. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E501"
+ },
+ {
+  "id": "E503",
+  "name": "Ammonium carbonates",
+  "synonyms": [],
+  "category": "raising agent",
+  "explanation": "Raising agent that evaporates during baking. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E503"
+ },
+ {
+  "id": "E504",
+  "name": "Magnesium carbonates",
+  "synonyms": [
+   "magnesium carbonate"
+  ],
+  "category": "anti-caking agent",
+  "explanation": "Anti-caking agent and magnesium source. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E504"
+ },
+ {
+  "id": "E509",
+  "name": "Calcium chloride",
+  "synonyms": [],
+  "category": "firming agent",
+  "explanation": "Mineral salt. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E509"
+ },
+ {
+  "id": "E516",
+  "name": "Calcium sulphate",
+  "synonyms": [
+   "calcium sulfate"
+  ],
+  "category": "firming agent",
+  "explanation": "Used to set tofu. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E516"
+ },
+ {
+  "id": "E524",
+  "name": "Sodium hydroxide",
+  "synonyms": [],
+  "category": "acidity regulator",
+  "explanation": "Used in tiny amounts to adjust acidity; neutralised in the food. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E524"
+ },
+ {
+  "id": "E551",
+  "name": "Silicon dioxide",
+  "synonyms": [
+   "silica",
+   "silicon dioxide"
+  ],
+  "category": "anti-caking agent",
+  "explanation": "Keeps powders free-flowing. EFSA (2018) found no safety concern at reported uses but noted data gaps, especially on nano-sized particles.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E551"
+ },
+ {
+  "id": "E552",
+  "name": "Calcium silicate",
+  "synonyms": [],
+  "category": "anti-caking agent",
+  "explanation": "Anti-caking agent. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E552"
+ },
+ {
+  "id": "E553b",
+  "name": "Talc",
+  "synonyms": [],
+  "category": "anti-caking agent",
+  "explanation": "Anti-caking agent; EFSA re-evaluation pending more data.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E553b"
+ },
+ {
+  "id": "E470b",
+  "name": "Magnesium salts of fatty acids",
+  "synonyms": [
+   "magnesium stearate"
+  ],
+  "category": "anti-caking agent",
+  "explanation": "Flow agent in powders and tablets. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E470b"
+ },
+ {
+  "id": "E575",
+  "name": "Glucono-delta-lactone",
+  "synonyms": [
+   "gdl"
+  ],
+  "category": "acidity regulator",
+  "explanation": "Mild acid made from glucose. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E575"
+ },
+ {
+  "id": "E621",
+  "name": "Monosodium glutamate",
+  "synonyms": [
+   "msg",
+   "monosodium glutamate"
+  ],
+  "category": "flavour enhancer",
+  "explanation": "Savoury flavour enhancer. EFSA (2017) set a group ADI that high consumers of processed food can exceed.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E621"
+ },
+ {
+  "id": "E627",
+  "name": "Disodium guanylate",
+  "synonyms": [],
+  "category": "flavour enhancer",
+  "explanation": "Flavour enhancer usually paired with MSG. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E627"
+ },
+ {
+  "id": "E631",
+  "name": "Disodium inosinate",
+  "synonyms": [],
+  "category": "flavour enhancer",
+  "explanation": "Flavour enhancer usually paired with MSG. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E631"
+ },
+ {
+  "id": "E901",
+  "name": "Beeswax",
+  "synonyms": [],
+  "category": "glazing agent",
+  "explanation": "Coating made by bees, so not vegan. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E901"
+ },
+ {
+  "id": "E903",
+  "name": "Carnauba wax",
+  "synonyms": [],
+  "category": "glazing agent",
+  "explanation": "Plant wax that makes coatings shiny. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E903"
+ },
+ {
+  "id": "E904",
+  "name": "Shellac",
+  "synonyms": [],
+  "category": "glazing agent",
+  "explanation": "Resin made by lac insects, so not vegan. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E904"
+ },
+ {
+  "id": "E941",
+  "name": "Nitrogen",
+  "synonyms": [],
+  "category": "packaging gas",
+  "explanation": "Inert gas used in packaging. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E941"
+ },
+ {
+  "id": "E942",
+  "name": "Nitrous oxide",
+  "synonyms": [],
+  "category": "propellant",
+  "explanation": "Propellant in whipped toppings. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E942"
+ },
+ {
+  "id": "E420",
+  "name": "Sorbitol",
+  "synonyms": [
+   "sorbitol syrup"
+  ],
+  "category": "sweetener (polyol)",
+  "explanation": "Sugar alcohol. EU labels must warn that 'excessive consumption may produce laxative effects'; about 20 g at once can cause bloating or diarrhoea.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E420"
+ },
+ {
+  "id": "E421",
+  "name": "Mannitol",
+  "synonyms": [],
+  "category": "sweetener (polyol)",
+  "explanation": "Sugar alcohol with a strong laxative effect in amounts around 20 g.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E421"
+ },
+ {
+  "id": "E422",
+  "name": "Glycerol",
+  "synonyms": [
+   "glycerin",
+   "glycerine",
+   "vegetable glycerin"
+  ],
+  "category": "humectant",
+  "explanation": "Keeps bars soft. Safe; very large amounts can cause headaches or loose stools. It has calories but often isn't counted as sugar.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E422"
+ },
+ {
+  "id": "E953",
+  "name": "Isomalt",
+  "synonyms": [],
+  "category": "sweetener (polyol)",
+  "explanation": "Sugar alcohol; laxative effects in larger amounts.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E953"
+ },
+ {
+  "id": "E965",
+  "name": "Maltitol",
+  "synonyms": [
+   "maltitol syrup"
+  ],
+  "category": "sweetener (polyol)",
+  "explanation": "Sugar alcohol common in 'low sugar' bars. It raises blood sugar about half as much as sugar and is one of the polyols most likely to cause gas and diarrhoea.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E965"
+ },
+ {
+  "id": "E966",
+  "name": "Lactitol",
+  "synonyms": [],
+  "category": "sweetener (polyol)",
+  "explanation": "Sugar alcohol made from milk sugar; laxative in larger amounts.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E966"
+ },
+ {
+  "id": "E967",
+  "name": "Xylitol",
+  "synonyms": [],
+  "category": "sweetener (polyol)",
+  "explanation": "Sugar alcohol that is good for teeth but laxative in larger amounts. Highly toxic to dogs, so keep products away from pets.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E967"
+ },
+ {
+  "id": "E968",
+  "name": "Erythritol",
+  "synonyms": [],
+  "category": "sweetener (polyol)",
+  "explanation": "Best-tolerated sugar alcohol with almost no calories. EFSA (2023) set an ADI of 0.5 g/kg body weight; some observational studies link high blood levels to cardiovascular events, which is still being studied.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E968"
+ },
+ {
+  "id": "E950",
+  "name": "Acesulfame K",
+  "synonyms": [
+   "acesulfame potassium",
+   "acesulfame-k",
+   "acesulfame"
+  ],
+  "category": "sweetener",
+  "explanation": "Intense sweetener, about 200 times sweeter than sugar. EFSA considers it safe at the ADI.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E950"
+ },
+ {
+  "id": "E951",
+  "name": "Aspartame",
+  "synonyms": [],
+  "category": "sweetener",
+  "explanation": "Intense sweetener. EFSA considers it safe at the ADI (40 mg/kg); IARC classified it as 'possibly carcinogenic' (2B) in 2023. Not suitable for people with phenylketonuria (PKU).",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/aspartame",
+  "eNumber": "E951"
+ },
+ {
+  "id": "E952",
+  "name": "Cyclamate",
+  "synonyms": [
+   "sodium cyclamate",
+   "cyclamic acid"
+  ],
+  "category": "sweetener",
+  "explanation": "Intense sweetener with a low ADI (7 mg/kg). Banned in the USA; allowed in the EU in limited uses.",
+  "concern": "moderate",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E952"
+ },
+ {
+  "id": "E954",
+  "name": "Saccharin",
+  "synonyms": [
+   "sodium saccharin"
+  ],
+  "category": "sweetener",
+  "explanation": "Oldest intense sweetener. EFSA raised its ADI in 2024 and considers it safe.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E954"
+ },
+ {
+  "id": "E955",
+  "name": "Sucralose",
+  "synonyms": [],
+  "category": "sweetener",
+  "explanation": "Intense sweetener used in most protein powders. EFSA considers it safe at the ADI; recent lab studies on a by-product (sucralose-6-acetate) and on heating have prompted further review.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E955"
+ },
+ {
+  "id": "E957",
+  "name": "Thaumatin",
+  "synonyms": [],
+  "category": "sweetener",
+  "explanation": "Sweet protein from the katemfe fruit. Safe.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E957"
+ },
+ {
+  "id": "E960",
+  "name": "Steviol glycosides",
+  "synonyms": [
+   "stevia",
+   "stevia extract",
+   "steviol glycosides",
+   "rebaudioside a",
+   "reb a",
+   "stevia leaf extract"
+  ],
+  "category": "sweetener",
+  "explanation": "Plant-derived intense sweetener. EFSA considers it safe at the ADI.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E960"
+ },
+ {
+  "id": "E961",
+  "name": "Neotame",
+  "synonyms": [],
+  "category": "sweetener",
+  "explanation": "Intense sweetener related to aspartame, used in tiny amounts. Safe at the ADI.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E961"
+ },
+ {
+  "id": "E962",
+  "name": "Aspartame-acesulfame salt",
+  "synonyms": [],
+  "category": "sweetener",
+  "explanation": "Combination of aspartame and acesulfame. Not suitable for people with PKU.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E962"
+ },
+ {
+  "id": "E969",
+  "name": "Advantame",
+  "synonyms": [],
+  "category": "sweetener",
+  "explanation": "Very intense sweetener used in tiny amounts. Safe at the ADI.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/sweeteners",
+  "eNumber": "E969"
+ },
+ {
+  "id": "E1200",
+  "name": "Polydextrose",
+  "synonyms": [],
+  "category": "bulking agent / fibre",
+  "explanation": "Synthetic fibre used to replace sugar. Counts as fibre on the label, which lowers 'net carbs'; large amounts can cause bloating.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E1200"
+ },
+ {
+  "id": "E1422",
+  "name": "Acetylated distarch adipate",
+  "synonyms": [
+   "modified starch"
+  ],
+  "category": "thickener",
+  "explanation": "Modified starch. Safe, but a marker of processing.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E1422"
+ },
+ {
+  "id": "E1442",
+  "name": "Hydroxypropyl distarch phosphate",
+  "synonyms": [],
+  "category": "thickener",
+  "explanation": "Modified starch. Safe, but a marker of processing.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E1442"
+ },
+ {
+  "id": "E1520",
+  "name": "Propylene glycol",
+  "synonyms": [],
+  "category": "humectant / carrier",
+  "explanation": "Carrier for flavourings and moisture keeper. Safe at the ADI.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives",
+  "eNumber": "E1520"
+ },
+ {
+  "id": "natural-flavouring",
+  "name": "Natural flavouring",
+  "synonyms": [
+   "natural flavouring",
+   "natural flavourings",
+   "natural flavoring",
+   "natural flavor",
+   "natural flavors",
+   "natural flavour",
+   "natural flavours",
+   "natural aroma"
+  ],
+  "category": "flavouring",
+  "explanation": "Flavour extracted from natural sources. Regulated and safe, but the exact substances don't have to be disclosed.",
+  "concern": "none",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+ },
+ {
+  "id": "flavouring",
+  "name": "Flavouring",
+  "synonyms": [
+   "flavouring",
+   "flavourings",
+   "flavoring",
+   "flavorings",
+   "artificial flavour",
+   "artificial flavor",
+   "artificial flavours",
+   "artificial flavors",
+   "aroma",
+   "aromas"
+  ],
+  "category": "flavouring",
+  "explanation": "Unspecified flavourings. Every flavouring substance is assessed by EFSA, but labels don't say which ones are used.",
+  "concern": "limited",
+  "source": "https://www.efsa.europa.eu/en/topics/topic/food-additives"
+ },
+ {
+  "id": "enzymes",
+  "name": "Enzymes",
+  "synonyms": [
+   "enzymes",
+   "lactase",
+   "protease"
+  ],
+  "category": "processing aid",
+  "explanation": "Enzymes added to aid digestion or processing (for example lactase to break down lactose). Safe.",
+  "concern": "none",
+  "source": "https://food.ec.europa.eu/food-safety/food-improvement-agents/additives/database_en"
+ }
+]

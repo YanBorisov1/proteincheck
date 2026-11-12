@@ -1,0 +1,44 @@
+import type { Messages } from '../types';
+
+/**
+ * Spanish (partial). Missing keys fall back to English automatically.
+ * Contributions welcome — see CONTRIBUTING in the README.
+ */
+export const es: Messages = {
+  'app.tagline': 'Descubre lo que hay de verdad en tus alimentos proteicos.',
+  'nav.home': 'Inicio',
+  'nav.scan': 'Escanear',
+  'nav.compare': 'Comparar',
+  'nav.history': 'Historial',
+  'nav.learn': 'Aprender',
+  'nav.settings': 'Ajustes',
+  'nav.back': 'Atrás',
+  'common.loading': 'Cargando…',
+  'common.close': 'Cerrar',
+  'common.yes': 'Sí',
+  'common.no': 'No',
+  'common.offline': 'Sin conexión. Los productos que ya escaneaste siguen funcionando.',
+  'home.scan': 'Escanear código de barras',
+  'home.scanHint': 'Apunta la cámara al código de barras',
+  'home.enterBarcode': 'Escribir un código',
+  'home.barcodeLabel': 'Número del código de barras',
+  'home.lookUp': 'Buscar',
+  'home.search': 'Buscar productos',
+  'home.recent': 'Escaneos recientes',
+  'home.photoLabel': 'Fotografiar la etiqueta',
+  'home.manualEntry': 'Introducir valores a mano',
+  'results.score': 'Puntuación de honestidad proteica',
+  'results.redFlags': 'Señales de alerta',
+  'results.goodPoints': 'Puntos positivos',
+  'results.why': '¿Por qué esta puntuación?',
+  'settings.title': 'Ajustes',
+  'settings.language': 'Idioma',
+  'settings.theme': 'Apariencia',
+  'settings.themeSystem': 'Como el dispositivo',
+  'settings.themeLight': 'Claro',
+  'settings.themeDark': 'Oscuro',
+  'settings.diet': 'Mis necesidades alimentarias',
+  'learn.title': 'Aprender',
+  'compare.title': 'Comparar productos',
+  'history.title': 'Historial',
+};
