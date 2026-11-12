@@ -55,3 +55,30 @@ test('analyse a product entered by hand', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Plain Skyr' })).toBeVisible();
   await expect(page.getByRole('img', { name: /grade A/ })).toBeVisible();
 });
+
+test('identify a product from words on the pack and confirm the match', async ({ page }) => {
+  await page.route('https://world.openfoodfacts.org/**', (route) => {
+    const url = route.request().url();
+    if (url.includes('search.pl')) {
+      return route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify({
+          products: [
+            { code: '1111111111111', product_name: 'Protein Bar Caramel', brands: 'Other Brand' },
+            { code: '4000000000017', product_name: 'Crunchy Protein Bar', brands: 'Test Brand' },
+          ],
+        }),
+      });
+    }
+    return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(BAR) });
+  });
+  // Typed words take the same path as words read from a photo.
+  await page.goto('/#/identify?q=test%20brand%20crunchy');
+  await expect(page.getByRole('heading', { name: /Best match found/ })).toBeVisible();
+  const first = page.getByRole('listitem').filter({ hasText: 'Crunchy Protein Bar' });
+  await expect(first).toContainText('100% of the words match');
+  await first.getByRole('button').click();
+  await expect(page.getByRole('heading', { name: 'Crunchy Protein Bar' })).toBeVisible();
+  await expect(page.getByRole('img', { name: /grade E/ })).toBeVisible();
+});

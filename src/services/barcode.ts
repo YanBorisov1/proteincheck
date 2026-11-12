@@ -14,6 +14,10 @@ interface BarcodeDetectorCtor {
   getSupportedFormats?: () => Promise<string[]>;
 }
 
+import { attachStream, openCamera, stopStream } from './camera';
+
+export { CameraError } from './camera';
+
 const FORMATS = ['ean_13', 'ean_8', 'upc_a', 'upc_e', 'code_128'];
 
 function nativeCtor(): BarcodeDetectorCtor | undefined {
@@ -39,38 +43,14 @@ export interface ScanSession {
   setTorch(on: boolean): Promise<void>;
 }
 
-export class CameraError extends Error {
-  constructor(public readonly kind: 'denied' | 'unavailable' | 'insecure') {
-    super(kind);
-    this.name = 'CameraError';
-  }
-}
-
 interface TorchCapabilities extends MediaTrackCapabilities {
   torch?: boolean;
-}
-
-async function openCamera(): Promise<MediaStream> {
-  if (!window.isSecureContext) throw new CameraError('insecure');
-  if (!navigator.mediaDevices?.getUserMedia) throw new CameraError('unavailable');
-  try {
-    return await navigator.mediaDevices.getUserMedia({
-      audio: false,
-      video: { facingMode: { ideal: 'environment' }, width: { ideal: 1280 }, height: { ideal: 720 } },
-    });
-  } catch (e) {
-    const name = e instanceof DOMException ? e.name : '';
-    throw new CameraError(name === 'NotAllowedError' || name === 'SecurityError' ? 'denied' : 'unavailable');
-  }
 }
 
 /** Starts scanning into `video`; calls onDetect once with the first valid code. */
 export async function startScanner(video: HTMLVideoElement, onDetect: (code: string) => void): Promise<ScanSession> {
   const stream = await openCamera();
-  video.srcObject = stream;
-  video.setAttribute('playsinline', 'true');
-  video.muted = true;
-  await video.play().catch(() => undefined);
+  await attachStream(video, stream);
   const track = stream.getVideoTracks()[0];
   const caps = (track?.getCapabilities?.() ?? {}) as TorchCapabilities;
   let stopped = false;
@@ -117,8 +97,7 @@ export async function startScanner(video: HTMLVideoElement, onDetect: (code: str
     stop() {
       stopped = true;
       stopZxing?.();
-      stream.getTracks().forEach((t) => t.stop());
-      video.srcObject = null;
+      stopStream(stream, video);
     },
   };
 }

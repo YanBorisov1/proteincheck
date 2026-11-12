@@ -40,3 +40,39 @@ export async function recognizeLabel(file: Blob, uiLanguage: string, onProgress?
     await worker.terminate();
   }
 }
+
+export interface FrontWord {
+  text: string;
+  confidence: number;
+  height: number;
+}
+
+/**
+ * Reads the words on the front of a pack, with each word's size and confidence.
+ * Uses sparse-text mode, which suits scattered words on packaging better than
+ * the default "page of text" mode.
+ */
+export async function recognizeFrontWords(file: Blob, uiLanguage: string, onProgress?: OcrProgress): Promise<FrontWord[]> {
+  const { createWorker, PSM } = await import('tesseract.js');
+  const worker = await createWorker(OCR_LANGS[uiLanguage] ?? 'eng', 1, {
+    logger: (m: { status: string; progress: number }) => onProgress?.(m.status, m.progress),
+  });
+  try {
+    await worker.setParameters({ tessedit_pageseg_mode: PSM.SPARSE_TEXT });
+    const image = await prepareImage(file, 1600);
+    const { data } = await worker.recognize(image, {}, { blocks: true, text: true });
+    const words: FrontWord[] = [];
+    for (const block of data.blocks ?? []) {
+      for (const para of block.paragraphs) {
+        for (const line of para.lines) {
+          for (const w of line.words) {
+            words.push({ text: w.text, confidence: w.confidence, height: Math.max(0, w.bbox.y1 - w.bbox.y0) });
+          }
+        }
+      }
+    }
+    return words;
+  } finally {
+    await worker.terminate();
+  }
+}

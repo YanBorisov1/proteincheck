@@ -93,6 +93,9 @@ export default function ScannerPage() {
         <h2 className="mb-2 font-semibold">{t('scanner.manual')}</h2>
         <BarcodeForm id="scanner-barcode" />
       </Card>
+      <Button variant="secondary" className="w-full" onClick={() => navigate('/identify')}>
+        <Icon name="camera" className="h-5 w-5" /> {t('home.scanProduct')}
+      </Button>
       <Button variant="secondary" className="w-full" onClick={() => navigate('/add?mode=photo')}>
         <Icon name="camera" className="h-5 w-5" /> {t('home.photoLabel')}
       </Button>

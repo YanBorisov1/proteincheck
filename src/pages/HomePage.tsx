@@ -52,11 +52,18 @@ export function HomePage() {
     <div className="space-y-6">
       <section className="space-y-3 text-center">
         <p className="text-gray-700 dark:text-gray-300">{t('app.tagline')}</p>
-        <Link to="/scan" className="flex min-h-[120px] flex-col items-center justify-center gap-2 rounded-2xl bg-brand-700 p-6 text-white shadow-lg hover:bg-brand-800">
-          <Icon name="scan" className="h-12 w-12" />
-          <span className="text-2xl font-bold">{t('home.scan')}</span>
-          <span className="text-sm opacity-90">{t('home.scanHint')}</span>
-        </Link>
+        <div className="grid grid-cols-2 gap-3">
+          <Link to="/scan" className="flex min-h-[132px] flex-col items-center justify-center gap-2 rounded-2xl bg-brand-700 p-4 text-white shadow-lg hover:bg-brand-800">
+            <Icon name="scan" className="h-10 w-10" />
+            <span className="text-lg font-bold leading-tight">{t('home.scan')}</span>
+            <span className="text-xs opacity-90">{t('home.scanHint')}</span>
+          </Link>
+          <Link to="/identify" className="flex min-h-[132px] flex-col items-center justify-center gap-2 rounded-2xl bg-brand-900 p-4 text-white shadow-lg hover:bg-brand-800">
+            <Icon name="camera" className="h-10 w-10" />
+            <span className="text-lg font-bold leading-tight">{t('home.scanProduct')}</span>
+            <span className="text-xs opacity-90">{t('home.scanProductHint')}</span>
+          </Link>
+        </div>
       </section>
 
       <Card>

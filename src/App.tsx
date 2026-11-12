@@ -7,6 +7,7 @@ import { HomePage } from './pages/HomePage';
 import { SettingsProvider, useSettings } from './state/settings';
 
 const ScannerPage = lazy(() => import('./pages/ScannerPage'));
+const IdentifyPage = lazy(() => import('./pages/IdentifyPage'));
 const ProductPage = lazy(() => import('./pages/ProductPage'));
 const AddProductPage = lazy(() => import('./pages/AddProductPage'));
 const ComparePage = lazy(() => import('./pages/ComparePage'));
@@ -31,6 +32,7 @@ function Routed() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/scan" element={<ScannerPage />} />
+              <Route path="/identify" element={<IdentifyPage />} />
               <Route path="/product/:id" element={<ProductPage />} />
               <Route path="/add" element={<AddProductPage />} />
               <Route path="/compare" element={<ComparePage />} />

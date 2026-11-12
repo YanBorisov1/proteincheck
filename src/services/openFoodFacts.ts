@@ -170,13 +170,14 @@ export interface SearchHit {
   name: string;
   brand?: string;
   imageUrl?: string;
+  quantity?: string;
 }
 
 /** Full-text product search (online only). */
 export async function searchProducts(query: string, fetchImpl: typeof fetch = fetch): Promise<SearchHit[]> {
   const q = query.trim();
   if (q.length < 2) return [];
-  const url = `${API}/cgi/search.pl?search_terms=${encodeURIComponent(q)}&search_simple=1&action=process&json=1&page_size=20&fields=code,product_name,brands,image_front_small_url`;
+  const url = `${API}/cgi/search.pl?search_terms=${encodeURIComponent(q)}&search_simple=1&action=process&json=1&page_size=24&fields=code,product_name,brands,image_front_small_url,quantity`;
   let res: Response;
   try {
     res = await fetchImpl(url);
@@ -192,6 +193,7 @@ export async function searchProducts(query: string, fetchImpl: typeof fetch = fe
       const brand = p.brands?.split(',')[0]?.trim();
       if (brand) hit.brand = brand;
       if (p.image_front_small_url) hit.imageUrl = p.image_front_small_url;
+      if (p.quantity) hit.quantity = p.quantity;
       return hit;
     });
 }
