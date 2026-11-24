@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { highlightIngredients, type HighlightKind, type Segment } from '../analysis/highlight';
 import { useI18n } from '../i18n/I18nProvider';
 import { InfoSheet } from './InfoSheet';
@@ -32,16 +32,30 @@ function styleFor(seg: Segment): string {
   return KIND_STYLES[seg.kind];
 }
 
-export function IngredientText({ text }: { text: string }) {
+export function IngredientText({ text, clampLines }: { text: string; /** Collapse to about this many lines with a "show all" toggle. */ clampLines?: number }) {
   const { t } = useI18n();
   const segments = useMemo(() => highlightIngredients(text), [text]);
   const [active, setActive] = useState<{ ref: string; text: string } | null>(null);
   const info = useTermInfo(active?.ref ?? null, active?.text ?? '');
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const [expanded, setExpanded] = useState(false);
+  const [overflows, setOverflows] = useState(false);
+  useLayoutEffect(() => {
+    const el = textRef.current;
+    if (!el || !clampLines || expanded) return;
+    setOverflows(el.scrollHeight > el.clientHeight + 4);
+  }, [text, clampLines, expanded]);
+  const clamped = Boolean(clampLines) && !expanded;
   const kinds = useMemo(() => [...new Set(segments.map((s) => s.kind).filter((k): k is HighlightKind => Boolean(k)))], [segments]);
 
   return (
     <div>
-      <p className="leading-8">
+      <p
+        ref={textRef}
+        id="ingredient-text"
+        className="leading-8"
+        style={clamped ? { display: '-webkit-box', WebkitBoxOrient: 'vertical', WebkitLineClamp: clampLines, overflow: 'hidden' } : undefined}
+      >
         {segments.map((seg, i) =>
           seg.kind && seg.ref ? (
             <button
@@ -58,6 +72,17 @@ export function IngredientText({ text }: { text: string }) {
           ),
         )}
       </p>
+      {clampLines && (overflows || expanded) && (
+        <button
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+          aria-expanded={expanded}
+          aria-controls="ingredient-text"
+          className="mt-1 min-h-[44px] font-semibold text-brand-700 underline dark:text-brand-100"
+        >
+          {expanded ? t('quick.ingredients.less') : t('quick.ingredients.all')}
+        </button>
+      )}
       {kinds.length > 0 && (
         <div className="mt-3">
           <h3 className="sr-only">{t('results.legend')}</h3>

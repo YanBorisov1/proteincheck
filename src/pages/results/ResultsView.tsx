@@ -6,7 +6,6 @@ import { FindingList } from '../../components/FindingList';
 import { Icon } from '../../components/Icon';
 import { IngredientText } from '../../components/IngredientText';
 import { ScoreBadge } from '../../components/ScoreBadge';
-import { Section } from '../../components/Section';
 import { useI18n } from '../../i18n/I18nProvider';
 import { updateSaved, type SavedProduct } from '../../services/db';
 import { contributeUrl, productPageUrl } from '../../services/openFoodFacts';
@@ -150,6 +149,24 @@ export function ResultsView({ saved, cached, onChange }: { saved: SavedProduct; 
 
       <QuickFacts r={r} />
 
+      <section aria-labelledby="ingredients-heading" className="rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
+        <div className="mb-1 flex items-baseline justify-between gap-2">
+          <h2 id="ingredients-heading" className="font-bold">{t('results.ingredients')}</h2>
+          {r.ingredients.length > 0 && <span className="text-sm text-gray-600 dark:text-gray-400">{t('results.ingredientCount', { count: r.ingredients.length })}</span>}
+        </div>
+        {product.ingredientsText ? (
+          <>
+            <p className="mb-1 text-sm text-gray-600 dark:text-gray-400">{t('results.ingredientsHint')}</p>
+            <IngredientText text={product.ingredientsText} clampLines={5} />
+          </>
+        ) : (
+          <p>
+            {t('product.noIngredients')}{' '}
+            <Link to={`/add?mode=manual&edit=${encodeURIComponent(saved.id)}`} className="font-semibold text-brand-700 underline dark:text-brand-100">{t('quick.ingredients.add')}</Link>
+          </p>
+        )}
+      </section>
+
       {/* Top flags */}
       <div className="grid gap-3 sm:grid-cols-2">
         <section className="rounded-2xl border border-red-200 bg-red-50 p-4 dark:border-red-900 dark:bg-red-950/40" aria-labelledby="flags-heading">
@@ -185,17 +202,6 @@ export function ResultsView({ saved, cached, onChange }: { saved: SavedProduct; 
 
       {showMore && (
         <div id="more-details" className="space-y-4">
-        {/* Ingredients */}
-        <Section title={t('results.ingredients')} summary={r.ingredients.length ? t('results.ingredientCount', { count: r.ingredients.length }) : undefined} defaultOpen>
-          {product.ingredientsText ? (
-            <>
-              <p className="text-sm text-gray-600 dark:text-gray-400">{t('results.ingredientsHint')}</p>
-              <IngredientText text={product.ingredientsText} />
-            </>
-          ) : (
-            <p>{t('product.noIngredients')}</p>
-          )}
-        </Section>
 
         <NutritionSection r={r} />
         <DensitySection r={r} />

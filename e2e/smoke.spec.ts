@@ -37,8 +37,11 @@ test('look up a barcode, see an explained verdict, and find it in history', asyn
   await expect(facts).toContainText('Low protein');
   await expect(facts).toContainText('High sugar');
   await expect(page.getByText('Not a real protein food')).toBeVisible();
-  // Details stay hidden until asked for.
-  await expect(page.getByRole('heading', { name: 'Ingredients' })).toHaveCount(0);
+  // Ingredients are in the quick view, trimmed with a "show all" toggle.
+  await expect(page.getByRole('heading', { name: 'Ingredients' })).toBeVisible();
+  await page.getByRole('button', { name: 'Show all ingredients' }).click();
+  // Other details stay hidden until asked for.
+  await expect(page.locator('summary', { hasText: 'Nutrition facts' })).toHaveCount(0);
   await page.getByRole('button', { name: /More details/ }).click();
   await expect(page.locator('summary', { hasText: 'Nutrition facts' })).toBeVisible();
   await expect(page.getByRole('table', { name: 'Nutrition facts' })).toContainText('210 kcal');
