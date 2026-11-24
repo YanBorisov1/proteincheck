@@ -2,6 +2,7 @@ import { analyzeAdditives, type AdditiveAnalysis } from './additives';
 import { analyzeAllergens, type AllergenAnalysis } from './allergens';
 import { analyzeBlends, type BlendAnalysis } from './blends';
 import { checkProteinClaim, type ClaimCheck } from './claims';
+import { analyzeEnergy, type EnergyAnalysis } from './energy';
 import { analyzeFats, type FatAnalysis } from './fats';
 import { analyzeFillers, type FillerAnalysis } from './fillers';
 import { analyzeProcessing, type ProcessingAnalysis } from './processing';
@@ -17,6 +18,7 @@ import { analyzeValue, type ValueAnalysis } from './value';
 export interface AnalysisResult {
   product: Product;
   ingredients: Ingredient[];
+  energy: EnergyAnalysis;
   density: ProteinDensity;
   claim: ClaimCheck;
   quality: ProteinQuality;
@@ -50,6 +52,7 @@ export function analyzeProduct(product: Product, options: AnalysisOptions = {}):
   const flat = flattenIngredients(ingredients);
   const n = product.nutriments;
 
+  const energy = analyzeEnergy(product);
   const density = analyzeProteinDensity(product);
   const claim = checkProteinClaim(product, density.energyPct);
   const quality = analyzeProteinQuality(flat);
@@ -94,6 +97,7 @@ export function analyzeProduct(product: Product, options: AnalysisOptions = {}):
   return {
     product,
     ingredients,
+    energy,
     density,
     claim,
     quality,

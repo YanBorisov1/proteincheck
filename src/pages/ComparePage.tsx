@@ -7,7 +7,7 @@ import { useI18n } from '../i18n/I18nProvider';
 import { listHistory, type SavedProduct } from '../services/db';
 import { MAX_COMPARE, useCompareList } from '../state/compare';
 import { useSettings } from '../state/settings';
-import { formatMoney } from '../utils/format';
+import { formatEnergy, formatMoney } from '../utils/format';
 
 interface Row {
   key: string;
@@ -43,6 +43,8 @@ export default function ComparePage() {
   const g = (v: number | undefined, d = 1) => (v === undefined ? '—' : `${n(v, d)} g`);
   const rows: Row[] = [
     { key: 'score', label: t('compare.row.score'), value: (r) => r.score.total, render: (r) => <ScoreBadge size="sm" {...(r.score.total !== undefined ? { score: r.score.total } : {})} {...(r.score.grade ? { grade: r.score.grade } : {})} />, better: 'high' },
+    { key: 'kcal100', label: t('compare.row.kcal100'), value: (r) => r.energy.kcal100g, render: (_, v) => formatEnergy(v, settings.energyUnit, n) },
+    { key: 'kcalServ', label: t('compare.row.kcalServing'), value: (r) => r.energy.kcalPerServing, render: (_, v) => formatEnergy(v, settings.energyUnit, n) },
     { key: 'pct', label: t('compare.row.proteinPct'), value: (r) => r.density.energyPct, render: (_, v) => (v === undefined ? '—' : `${v}%`), better: 'high' },
     { key: 'p100', label: t('compare.row.protein100'), value: (r) => r.density.per100g, render: (_, v) => g(v), better: 'high' },
     { key: 'pserv', label: t('compare.row.proteinServing'), value: (r) => r.density.perServing, render: (_, v) => g(v) },

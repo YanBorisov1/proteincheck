@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { analyzeProduct } from '../../analysis';
 import type { Finding, Severity } from '../../analysis/types';
@@ -20,14 +20,19 @@ import {
   DensitySection,
   FatsSection,
   FiberSection,
+  NutritionSection,
   ProcessingSection,
   QualitySection,
   SaltSection,
   SpikingSection,
   SugarSection,
 } from './sections';
+import { safeStorage } from '../../utils/storage';
+import { QuickFacts } from './QuickFacts';
 import { ValueSection } from './ValueSection';
 import { WhyScore } from './WhyScore';
+
+const MORE_KEY = 'proteincheck.showMore';
 
 export function statusOf(findings: Finding[]): Severity | undefined {
   for (const s of ['bad', 'warn', 'good', 'info'] as const) if (findings.some((f) => f.severity === s)) return s;
@@ -49,6 +54,25 @@ export function ResultsView({ saved, cached, onChange }: { saved: SavedProduct; 
     [product, settings.prefs, saved.price, saved.packageSizeG],
   );
   const inCompare = compare.ids.includes(saved.id);
+  const [showMore, setShowMore] = useState(() => safeStorage.get(MORE_KEY) === '1');
+  const scrollToWhy = useRef(false);
+  const toggleMore = (open: boolean) => {
+    setShowMore(open);
+    safeStorage.set(MORE_KEY, open ? '1' : '0');
+  };
+  // "Why this score?" lives in the details: open them if needed, then jump there.
+  const jumpToWhy = () => {
+    const el = document.getElementById('why');
+    if (el instanceof HTMLDetailsElement) el.open = true;
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el?.querySelector('summary')?.focus({ preventScroll: true });
+  };
+  useEffect(() => {
+    if (showMore && scrollToWhy.current) {
+      scrollToWhy.current = false;
+      jumpToWhy();
+    }
+  }, [showMore]);
   const patch = async (p: Parameters<typeof updateSaved>[1]) => {
     const next = await updateSaved(saved.id, p);
     if (next) onChange(next);
@@ -97,27 +121,34 @@ export function ResultsView({ saved, cached, onChange }: { saved: SavedProduct; 
       <section aria-labelledby="score-heading" className="flex items-center gap-4 rounded-2xl border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-900">
         <ScoreBadge {...(r.score.total !== undefined ? { score: r.score.total } : {})} {...(r.score.grade ? { grade: r.score.grade } : {})} />
         <div>
-          <h2 id="score-heading" className="font-bold">{t('results.score')}</h2>
-          {r.score.total === undefined ? (
+          <h2 id="score-heading" className="text-sm font-semibold text-gray-600 dark:text-gray-400">{t('results.score')}</h2>
+          {r.score.total === undefined || !r.score.grade ? (
             <>
               <p className="font-medium">{t('results.noScore')}</p>
               <p className="text-sm text-gray-600 dark:text-gray-400">{t('results.noScoreBody')}</p>
             </>
           ) : (
-            <p className="text-sm text-gray-600 dark:text-gray-400">{t(`results.confidence.${r.score.confidence}`)}</p>
+            <>
+              <p className="text-lg font-bold leading-snug">{t(`verdict.${r.score.grade}`)}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t(`results.confidence.${r.score.confidence}`)}</p>
+            </>
           )}
           <a
             href="#why"
             onClick={(e) => {
               e.preventDefault();
-              const el = document.getElementById('why');
-              if (el instanceof HTMLDetailsElement) el.open = true;
-              el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              el?.querySelector('summary')?.focus({ preventScroll: true });
+              if (showMore) {
+                jumpToWhy();
+              } else {
+                scrollToWhy.current = true;
+                toggleMore(true);
+              }
             }}
-            className="mt-1 inline-block min-h-[44px] content-center text-sm font-medium text-brand-700 underline dark:text-brand-100">{t('results.why')}</a>
+            className="inline-block min-h-[44px] content-center text-sm font-medium text-brand-700 underline dark:text-brand-100">{t('results.why')}</a>
         </div>
       </section>
+
+      <QuickFacts r={r} />
 
       {/* Top flags */}
       <div className="grid gap-3 sm:grid-cols-2">
@@ -138,48 +169,68 @@ export function ResultsView({ saved, cached, onChange }: { saved: SavedProduct; 
         </p>
       )}
 
-      {/* Ingredients */}
-      <Section title={t('results.ingredients')} summary={r.ingredients.length ? t('results.ingredientCount', { count: r.ingredients.length }) : undefined} defaultOpen>
-        {product.ingredientsText ? (
-          <>
-            <p className="text-sm text-gray-600 dark:text-gray-400">{t('results.ingredientsHint')}</p>
-            <IngredientText text={product.ingredientsText} />
-          </>
-        ) : (
-          <p>{t('product.noIngredients')}</p>
-        )}
-      </Section>
+      <button
+        type="button"
+        onClick={() => toggleMore(!showMore)}
+        aria-expanded={showMore}
+        aria-controls="more-details"
+        className="flex min-h-[56px] w-full items-center justify-between gap-3 rounded-2xl border-2 border-brand-700 bg-white px-4 py-3 text-left dark:border-brand-600 dark:bg-gray-900"
+      >
+        <span>
+          <span className="block text-lg font-bold text-brand-800 dark:text-brand-100">{showMore ? t('more.hide') : t('more.show')}</span>
+          {!showMore && <span className="block text-sm text-gray-600 dark:text-gray-400">{t('more.hint')}</span>}
+        </span>
+        <span aria-hidden="true" className={`text-2xl text-brand-700 transition-transform dark:text-brand-100 ${showMore ? 'rotate-180' : ''}`}>⌄</span>
+      </button>
 
-      <DensitySection r={r} />
-      <ClaimSection r={r} />
-      <QualitySection r={r} />
-      <SpikingSection r={r} />
-      <SugarSection r={r} />
-      <FatsSection r={r} />
-      <FiberSection r={r} />
-      <SaltSection r={r} />
-      <AdditivesSection r={r} />
-      <ProcessingSection r={r} />
-      <AllergensSection r={r} />
-      <BlendsSection r={r} />
-      <ValueSection r={r} saved={saved} onPatch={patch} />
-      <WhyScore score={r.score} />
+      {showMore && (
+        <div id="more-details" className="space-y-4">
+        {/* Ingredients */}
+        <Section title={t('results.ingredients')} summary={r.ingredients.length ? t('results.ingredientCount', { count: r.ingredients.length }) : undefined} defaultOpen>
+          {product.ingredientsText ? (
+            <>
+              <p className="text-sm text-gray-600 dark:text-gray-400">{t('results.ingredientsHint')}</p>
+              <IngredientText text={product.ingredientsText} />
+            </>
+          ) : (
+            <p>{t('product.noIngredients')}</p>
+          )}
+        </Section>
 
-      <footer className="space-y-2 pt-2 text-sm text-gray-600 dark:text-gray-400">
-        <p>{t(product.source === 'off' ? 'product.sourceOff' : product.source === 'ocr' ? 'product.sourceOcr' : 'product.sourceManual')}</p>
-        {product.barcode && product.source === 'off' && (
-          <p className="flex flex-wrap gap-x-4">
-            <a className="inline-flex min-h-[44px] items-center gap-1 underline" href={productPageUrl(product.barcode)} target="_blank" rel="noopener noreferrer">{t('product.viewOnOff')} <Icon name="external" className="h-4 w-4" /></a>
-            <a className="inline-flex min-h-[44px] items-center gap-1 underline" href={contributeUrl(product.barcode)} target="_blank" rel="noopener noreferrer">{t('product.improve')} <Icon name="external" className="h-4 w-4" /></a>
-          </p>
-        )}
-        {product.source !== 'off' && (
-          <p>
-            <a className="inline-flex min-h-[44px] items-center gap-1 underline" href={contributeUrl(product.barcode)} target="_blank" rel="noopener noreferrer">{t('product.contribute')} <Icon name="external" className="h-4 w-4" /></a>
-          </p>
-        )}
-        <p>{t('results.disclaimer')}</p>
-      </footer>
+        <NutritionSection r={r} />
+        <DensitySection r={r} />
+        <ClaimSection r={r} />
+        <QualitySection r={r} />
+        <SpikingSection r={r} />
+        <SugarSection r={r} />
+        <FatsSection r={r} />
+        <FiberSection r={r} />
+        <SaltSection r={r} />
+        <AdditivesSection r={r} />
+        <ProcessingSection r={r} />
+        <AllergensSection r={r} />
+        <BlendsSection r={r} />
+        <ValueSection r={r} saved={saved} onPatch={patch} />
+        <WhyScore score={r.score} />
+
+        <footer className="space-y-2 pt-2 text-sm text-gray-600 dark:text-gray-400">
+          <p>{t(product.source === 'off' ? 'product.sourceOff' : product.source === 'ocr' ? 'product.sourceOcr' : 'product.sourceManual')}</p>
+          {product.barcode && product.source === 'off' && (
+            <p className="flex flex-wrap gap-x-4">
+              <a className="inline-flex min-h-[44px] items-center gap-1 underline" href={productPageUrl(product.barcode)} target="_blank" rel="noopener noreferrer">{t('product.viewOnOff')} <Icon name="external" className="h-4 w-4" /></a>
+              <a className="inline-flex min-h-[44px] items-center gap-1 underline" href={contributeUrl(product.barcode)} target="_blank" rel="noopener noreferrer">{t('product.improve')} <Icon name="external" className="h-4 w-4" /></a>
+            </p>
+          )}
+          {product.source !== 'off' && (
+            <p>
+              <a className="inline-flex min-h-[44px] items-center gap-1 underline" href={contributeUrl(product.barcode)} target="_blank" rel="noopener noreferrer">{t('product.contribute')} <Icon name="external" className="h-4 w-4" /></a>
+            </p>
+          )}
+        </footer>
+        </div>
+      )}
+
+      <p className="text-xs text-gray-600 dark:text-gray-400">{t('results.disclaimer')}</p>
     </article>
   );
 }

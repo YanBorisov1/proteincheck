@@ -315,3 +315,62 @@ export function BlendsSection({ r }: P) {
     </Section>
   );
 }
+
+export function NutritionSection({ r }: P) {
+  const { t, n } = useI18n();
+  const { settings } = useSettings();
+  const p = r.product;
+  const nu = p.nutriments;
+  const serving = p.servingSizeG;
+  const hasServing = serving !== undefined && serving > 0;
+  const e = r.energy;
+  const rows: Array<{ key: string; label: string; v?: number; indent?: boolean; digits?: number }> = [
+    { key: 'fat', label: t('add.fat'), ...(nu.fat100g !== undefined ? { v: nu.fat100g } : {}) },
+    { key: 'sat', label: t('add.satFat'), indent: true, ...(nu.saturatedFat100g !== undefined ? { v: nu.saturatedFat100g } : {}) },
+    { key: 'carb', label: t('add.carbs'), ...(nu.carbohydrates100g !== undefined ? { v: nu.carbohydrates100g } : {}) },
+    { key: 'sug', label: t('add.sugars'), indent: true, ...(nu.sugars100g !== undefined ? { v: nu.sugars100g } : {}) },
+    { key: 'pol', label: t('add.polyols'), indent: true, ...(nu.polyols100g !== undefined ? { v: nu.polyols100g } : {}) },
+    { key: 'fib', label: t('add.fiber'), ...(nu.fiber100g !== undefined ? { v: nu.fiber100g } : {}) },
+    { key: 'pro', label: t('add.protein'), ...(nu.proteins100g !== undefined ? { v: nu.proteins100g } : {}) },
+    { key: 'salt', label: t('add.salt'), digits: 2, ...(r.salt.salt100g !== undefined ? { v: r.salt.salt100g } : {}) },
+  ].filter((row) => row.v !== undefined || ['fat', 'carb', 'pro', 'sug', 'salt'].includes(row.key));
+  const label = (s: string) => s.replace(/\s*\((?:g|kcal)\)$/, '');
+  return (
+    <Section
+      title={t('section.nutrition')}
+      summary={e.kcal100g !== undefined ? `${formatEnergy(e.kcal100g, settings.energyUnit, n)} ${t('common.per100g')}` : undefined}
+      defaultOpen
+    >
+      <table className="w-full text-sm">
+        <caption className="sr-only">{t('section.nutrition')}</caption>
+        <thead>
+          <tr className="border-b-2 border-gray-300 text-left dark:border-gray-600">
+            <th scope="col" className="py-1.5 font-semibold">{t('nutrition.nutrient')}</th>
+            <th scope="col" className="py-1.5 text-right font-semibold">{t('nutrition.per100')}</th>
+            {hasServing && <th scope="col" className="py-1.5 text-right font-semibold">{t('nutrition.perServing', { g: n(serving ?? 0, 0) })}</th>}
+          </tr>
+        </thead>
+        <tbody>
+          <tr className="border-b border-gray-200 font-semibold dark:border-gray-700">
+            <th scope="row" className="py-1.5 text-left">
+              {t('quick.calories')}
+              {e.estimated && <span className="ml-1 text-xs font-normal text-gray-600 dark:text-gray-400">{t('density.estimated')}</span>}
+            </th>
+            <td className="py-1.5 text-right tabular-nums">{formatEnergy(e.kcal100g, settings.energyUnit, n)}</td>
+            {hasServing && <td className="py-1.5 text-right tabular-nums">{formatEnergy(e.kcalPerServing, settings.energyUnit, n)}</td>}
+          </tr>
+          {rows.map((row) => (
+            <tr key={row.key} className="border-b border-gray-100 last:border-0 dark:border-gray-800">
+              <th scope="row" className={`py-1.5 text-left font-normal ${row.indent ? 'pl-4 text-gray-700 dark:text-gray-300' : ''}`}>{label(row.label)}</th>
+              <td className="py-1.5 text-right tabular-nums">{formatGrams(row.v, n, row.digits ?? 1)}</td>
+              {hasServing && <td className="py-1.5 text-right tabular-nums">{formatGrams(row.v === undefined || serving === undefined ? undefined : (row.v * serving) / 100, n, row.digits ?? 1)}</td>}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {e.kcalPerPackage !== undefined && e.kcalPerPackage !== e.kcalPerServing && (
+        <p className="text-xs text-gray-600 dark:text-gray-400">{t('nutrition.perPackage', { kcal: formatEnergy(e.kcalPerPackage, settings.energyUnit, n) })}</p>
+      )}
+    </Section>
+  );
+}

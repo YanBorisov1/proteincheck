@@ -31,6 +31,18 @@ test('look up a barcode, see an explained verdict, and find it in history', asyn
   await expect(flags.getByRole('listitem')).toHaveCount(3);
   await expect(flags).toContainText('Marketed as a protein product');
 
+  // The quick view shows the key facts, including calories (420 kcal/100 g × 50 g serving).
+  const facts = page.locator('section[aria-labelledby=quick-heading]');
+  await expect(facts).toContainText('210 kcal');
+  await expect(facts).toContainText('Low protein');
+  await expect(facts).toContainText('High sugar');
+  await expect(page.getByText('Not a real protein food')).toBeVisible();
+  // Details stay hidden until asked for.
+  await expect(page.getByRole('heading', { name: 'Ingredients' })).toHaveCount(0);
+  await page.getByRole('button', { name: /More details/ }).click();
+  await expect(page.locator('summary', { hasText: 'Nutrition facts' })).toBeVisible();
+  await expect(page.getByRole('table', { name: 'Nutrition facts' })).toContainText('210 kcal');
+
   // Tap a highlighted additive for its explanation.
   await page.getByRole('button', { name: /^E129: Additive/ }).click();
   await expect(page.getByRole('dialog')).toContainText('Allura red');
